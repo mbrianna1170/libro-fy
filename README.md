@@ -1,5 +1,5 @@
 # libro-fy :books:
-# Description: 
+# Description: :open_book:
 - Users are able to connect with a community from all over the world to share books that they enjoy reading. 
 - Libro-fy is a full stack application that takes a working Express.js and uses Sequelize to interatct with a MySQL database.
 - Site is tested through Insomina with packages from npm to start the server.
