@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # libro-fy :blue_book:
+=======
+# libro-fy :books:
+>>>>>>> bf32d72d617820117a8964914aab6e767c3e5f40
 # Description: 
 - Users are able to connect with a community from all over the world to share books that they enjoy reading. 
 - Libro-fy is a full stack application that takes a working Express.js and uses Sequelize to interatct with a MySQL database.
