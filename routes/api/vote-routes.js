@@ -1,13 +1,17 @@
 const router = require("express").Router();
-const { Category, Books } = require("models");
+const { Category, Product } = require("../../models");
+
+// The `/api/categories` endpoint
 
 router.get("/", (req, res) => {
-  Books.findall({
-    attribute: ["id", "book_name"],
+  // find all categories
+  // be sure to include its associated Products
+  Category.findAll({
+    attribute: ["id", "category_name"],
     include: [
       {
-        model: Book,
-        attributes: ["id", "category_name"],
+        model: Product,
+        attributes: ["id", "product_name", "price", "stock", "category_id"],
       },
     ],
   })
@@ -98,4 +102,4 @@ router.delete("/:id", (req, res) => {
     });
 });
 
-module.exports = router; 
+module.exports = router;
