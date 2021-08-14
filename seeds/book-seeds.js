@@ -26,6 +26,36 @@ const categoryData = [
     category_id: '2',
   },
   {
+    book_name: 'Treasure Island',
+    author_name: 'Robert Louis Stevenson',
+    book_url: 'https://www.hoopladigital.com/title/12638617',
+    category_id: '3',
+  },
+  {
+    book_name: 'Life of Pi',
+    author_name: 'Yann Martel',
+    book_url: 'https://www.hoopladigital.com/title/13919129',
+    category_id: '3',
+  },
+  {
+    book_name: '',
+    author_name: '',
+    book_url: '',
+    category_id: '',
+  },
+  {
+    book_name: '',
+    author_name: '',
+    book_url: '',
+    category_id: '',
+  },
+  {
+    book_name: '',
+    author_name: '',
+    book_url: '',
+    category_id: '',
+  },
+  {
     book_name: '',
     author_name: '',
     book_url: '',

@@ -8,7 +8,7 @@ const categoryData = [
     category_name: 'Fantasy/Sci-Fi',
   },
   {
-    category_name: 'Action/Adevnture',
+    category_name: 'Action/Adventure',
   },
   {
     category_name: 'Crime/Mystery',
