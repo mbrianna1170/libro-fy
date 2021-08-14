@@ -50,16 +50,16 @@ const categoryData = [
     category_id: '4',
   },
   {
-    book_name: '',
-    author_name: '',
-    book_url: '',
-    category_id: '',
+    book_name: 'The Great Gatsby',
+    author_name: 'F. Scott Fitzgerald',
+    book_url: 'https://www.hoopladigital.com/title/13810718',
+    category_id: '5',
   },
   {
-    book_name: '',
-    author_name: '',
-    book_url: '',
-    category_id: '',
+    book_name: 'To Kill a Mockingbird',
+    author_name: 'Harper Lee',
+    book_url: 'https://www.hoopladigital.com/title/13326642',
+    category_id: '5',
   },
 ];
 
