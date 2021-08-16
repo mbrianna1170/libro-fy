@@ -1,3 +1,5 @@
+const Book = require('./Books');
 const Category = require('./Category');
 
-module.exports = { Category };
+
+module.exports = { Book, Category };

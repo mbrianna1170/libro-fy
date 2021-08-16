@@ -4,7 +4,7 @@
     top: 0;
 }
 
-.cards {
+.post-list {
     display: flex;
 
     /* Put a card in the next row when previous cards take all width */
@@ -14,7 +14,7 @@
     margin-right: -8px;
 }
 
-.cards__item {
+.post {
     /* There will be 4 cards per row */
     flex-basis: 25%;
 
