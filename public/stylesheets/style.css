@@ -1,0 +1,24 @@
+.header {
+    /* Stick to the top */
+    position: sticky;
+    top: 0;
+}
+
+.post-list {
+    display: flex;
+
+    /* Put a card in the next row when previous cards take all width */
+    flex-wrap: wrap;
+
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.post {
+    /* There will be 4 cards per row */
+    flex-basis: 25%;
+
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
