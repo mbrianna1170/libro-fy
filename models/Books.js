@@ -40,6 +40,7 @@ Books.init(
         key: "id",
       },
     },
+
   },
   {
     sequelize,
@@ -51,3 +52,4 @@ Books.init(
 );
 
 module.exports = Books;
+
