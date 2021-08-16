@@ -1,5 +1,8 @@
 # libro-fy :books:
-# Description: 
+
+# Description: :open_book:
+- In a world flooded by  book options, sometimes you  need to simplify your selections. The average reader spends more time looking for a book than using that time to enjoy their read. Simplify with  Libro-fy. Libro-fy is website that allows their users to automatically get books based on recommendations, shares, likes and common interests. By simply creating an account the user will be able to save and rank  their favorite books in order to create a personal virtual bookshelf.
+
 - Users are able to connect with a community from all over the world to share books that they enjoy reading. 
 - Libro-fy is a full stack application that takes a working Express.js and uses Sequelize to interatct with a MySQL database.
 - Site is tested through Insomina with packages from npm to start the server.
