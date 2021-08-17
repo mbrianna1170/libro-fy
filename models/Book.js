@@ -4,10 +4,10 @@ const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
 // Initialize Product model (table) by extending off Sequelize's Model class
-class Books extends Model {}
+class Book extends Model {}
 
 // set up fields and rules for Product model
-Books.init(
+Book.init(
   {
     // define id column
     id: {
@@ -51,5 +51,5 @@ Books.init(
   }
 );
 
-module.exports = Books;
+module.exports = Book;
 
