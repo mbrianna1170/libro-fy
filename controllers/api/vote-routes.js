@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { Vote } = require("../../models");
 
+// GET Route
 router.get("/", (req, res) => {
   Vote.findAll()
     .then((dbVoteData) => res.json(dbVoteData))
@@ -10,7 +11,7 @@ router.get("/", (req, res) => {
     });
 });
 
-//create a new vote
+// POST Route
 router.post("/", (req, res) => {
   Vote.create({
     vote_text: req.body.vote_text,
@@ -24,7 +25,7 @@ router.post("/", (req, res) => {
     });
 });
 
-// Delete Vote
+// Delete 
 router.delete("/", (req, res) => {});
 
 module.exports = router;
