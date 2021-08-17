@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const { Book, Category } = require('../../models');
+const { Book, Category } = require("../../models");
 
 router.get("/", (req, res) => {
-  Book.findall({
-    attribute: ["id", "book_name"],
+  Book.findAll({
+    attribute: ['id', 'book_name', 'author_name', 'book_url'],
     include: [
       {
         model: Category,
@@ -19,23 +19,23 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-  // find one category by its `id` value
-  // be sure to include its associated Products
+  // find one book by its `id` value
+  // be sure to include its associated category
   Book.findOne({
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "book_name"],
+    attributes: ['id', 'book_name', 'author_name', 'book_url'],
     include: [
       {
         model: Category,
-        attributes: ["id", "category_name", "price", "stock", "category_id"],
+        attributes: ["id", "category_name"],
       },
     ],
   })
     .then((dbBookData) => {
       if (!dbBookData) {
-        res.status(404).json({ message: "No category found with this id" });
+        res.status(404).json({ message: "No book found with this id." });
         return;
       }
       res.json(dbBookData);
@@ -47,9 +47,12 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  // create a new category
+  // create a new book
   Book.create({
-    book_name: req.body.category_name,
+    book_name: req.body.book_name,
+    author_name: req.body.author_name,
+    book_url: req.body.book_url,
+    category_id: req.body.category_id,
   })
     .then((dbBookData) => res.json(dbBookData))
     .catch((err) => {
@@ -59,7 +62,7 @@ router.post("/", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
-  // update a category by its `id` value
+  // update a book by its `id` value
   Book.update(req.body, {
     where: {
       id: req.params.id,
@@ -67,7 +70,7 @@ router.put("/:id", (req, res) => {
   })
     .then((dbBookData) => {
       if (!dbBookData[0]) {
-        res.status(404).json({ message: "No Category found" });
+        res.status(404).json({ message: "No book found with this id." });
         return;
       }
       res.json(dbBookData);
@@ -87,7 +90,7 @@ router.delete("/:id", (req, res) => {
   })
     .then((dbBookData) => {
       if (!dbBookData) {
-        res.status(404).json({ message: "No Category found" });
+        res.status(404).json({ message: "No book found with this id." });
         return;
       }
       res.json(dbBookData);
@@ -98,4 +101,4 @@ router.delete("/:id", (req, res) => {
     });
 });
 
-module.exports = router; 
+module.exports = router;

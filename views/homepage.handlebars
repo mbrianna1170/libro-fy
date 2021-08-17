@@ -1,9 +1,10 @@
 <ol class="post-list">
+  {{#each books as |book|}}
   <li>
     <article class="post">
       <div class="title">
-        <a href="{{book_url}}" target="_blank">{{book_name}}</a>
-        <span>Written by: {{author_name}}</span>
+        <a href="{{book.book_url}}" target="_blank">{{book.book_name}}</a>
+        <span>Written by: {{book.author_name}}</span>
       </div>
       {{!-- <div class="meta">
         {{vote_count}} point(s) by {{user.username}} on
@@ -13,4 +14,5 @@
       </div> --}}
     </article>
   </li>
+  {{/each}}
 </ol>

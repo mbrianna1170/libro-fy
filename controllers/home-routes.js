@@ -4,7 +4,7 @@ const { Book, Category } = require("../models");
 
 router.get("/", (req, res) => {
   Book.findAll({
-    attribute: ["id", "book_name"],
+    attribute: ['id', 'book_name', 'author_name', 'book_url'],
     include: [
       {
         model: Category,
@@ -12,10 +12,14 @@ router.get("/", (req, res) => {
       },
     ],
   })
-    .then((dbCategoryData) => res.json(dbCategoryData))
-    .catch((err) => {
-      console.error(err);
-      res.status(500).json(err);
+    .then(dbBookData => {
+        // pass a single book object into the homepage template
+        const books = dbBookData.map(book => book.get({ plain: true }));
+        res.render('homepage', { books });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
     });
 });
 
