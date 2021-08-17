@@ -1,17 +1,26 @@
-const router = require('express').Router();
+const router = require("express").Router();
+const sequelize = require("../config/connection");
+const { Book, Category } = require("../models");
 
-router.get('/', (req, res) => {
-    res.render('homepage', {
-      id: 1,
-      book_url: 'https://www.amazon.com/dp/1524798657/ref=s9_acsd_al_bw_c2_x_0_i?pf_rd_m=ATVPDKIKX0DER&pf_rd_s=merchandised-search-4&pf_rd_r=H7TGMV1CTGSK17F1RHTC&pf_rd_t=101&pf_rd_p=435b6d4d-4bcd-4953-83c6-72f5c239ab8b&pf_rd_i=13270229011',
-      book_name: 'Malibu Rising',
-      author_name: 'Taylor Jenkins Reid',
-    //   comments: [{}, {}],
-    //   user: {
-    //     username: 'test_user'
-    //   }
+router.get("/", (req, res) => {
+  Book.findAll({
+    attribute: ['id', 'book_name', 'author_name', 'book_url'],
+    include: [
+      {
+        model: Category,
+        attributes: ["id", "category_name"],
+      },
+    ],
+  })
+    .then(dbBookData => {
+        // pass a single book object into the homepage template
+        const books = dbBookData.map(book => book.get({ plain: true }));
+        res.render('homepage', { books });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
     });
-  });
+});
 
 module.exports = router;
-
