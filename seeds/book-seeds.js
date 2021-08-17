@@ -1,6 +1,6 @@
-const { Books } = require("../models");
+const { Book } = require("../models");
 
-const categoryData = [
+const bookData = [
   {
     book_name: "Goodnight Moon",
     author_name: "Margaret Wise Brown",
@@ -65,6 +65,6 @@ const categoryData = [
   },
 ];
 
-const seedBooks = () => Books.bulkCreate(bookData);
+const seedBooks = () => Book.bulkCreate(bookData);
 
 module.exports = seedBooks;
