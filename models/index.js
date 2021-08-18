@@ -1,7 +1,7 @@
 const User = require("./User");
 // const Comment = require("./Comment");
 const Book = require("./Book");
-// const Category = require('./Category');
+const Category = require('./Category');
 const Vote = require("./Vote");
 
 // //user can have many books but a book cannot have many users
@@ -40,6 +40,14 @@ Book.hasMany(Vote, {
   foreignKey: "book_id",
 });
 
+Category.hasMany(Book, {
+  foreignKey: "category_id"
+});
+
+Book.belongsTo(Category, {
+  foreignKey: "book_id"
+});
+
 
 // User.hasMany(Comment, {
 //   foreignKey: 'user_id',
@@ -48,4 +56,4 @@ Book.hasMany(Vote, {
 // Comment.belongsTo(User, {
 //   foreignKey
 // })
-module.exports = { User, Book, Vote };
+module.exports = { User, Book, Vote, Category };
