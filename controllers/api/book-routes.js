@@ -1,10 +1,22 @@
 const router = require("express").Router();
 
-const { Book, Category } = require("../../models");
+const { Book, Category, Vote, User} = require("../../models");
 
 router.get("/", (req, res) => {
   Book.findAll({
-    attribute: ['id', 'book_name', 'author_name', 'book_url'],
+    attribute: [
+      "id",
+      "book_name",
+      "author_name",
+      "book_url",
+
+      [
+        sequelize.literal(
+          "(SELECT COUNT(*) FROM vote WHERE book.id = vote.book_id)"
+        ),
+        "vote_count",
+      ],
+    ],
     include: [
       {
         model: Category,
@@ -26,7 +38,18 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ['id', 'book_name', 'author_name', 'book_url'],
+    attributes: [
+      "id",
+      "book_name",
+      "author_name",
+      "book_url",
+      [
+        sequelize.literal(
+          "(SELECT COUNT(*) FROM vote WHERE book.id = vote.book_id)"
+        ),
+        "vote_count",
+      ],
+    ],
     include: [
       {
         model: Category,
@@ -61,6 +84,17 @@ router.post("/", (req, res) => {
       res.status(500).json(err);
     });
 });
+
+router.put('/upvote', (req, res) => {
+  // custom static method created in models/Post.js
+  Book.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
+    .then(updatedVoteData => res.json(updatedVoteData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 
 router.put("/:id", (req, res) => {
   // update a book by its `id` value
