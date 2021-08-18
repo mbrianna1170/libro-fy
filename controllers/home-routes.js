@@ -24,9 +24,14 @@ router.get("/", (req, res) => {
     });
 });
 
-// this will take users to login and sign-up page
-router.get("/login", (req, res) => {
-  res.render("login");
+// will direct to login and sign-up page
+router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('login');
 });
 
 module.exports = router;
