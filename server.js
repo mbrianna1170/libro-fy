@@ -26,16 +26,18 @@ const sess = {
 
 // turn on session
 app.use(session(sess));
-const posts = [
-  {
-    username: "",
-    title: "Post 1",
-  },
-  {
-    username: "",
-    title: "Post 2",
-  },
-];
+
+// const Posts
+// const posts = [
+//   {
+//     username: "",
+//     title: "Post 1",
+//   },
+//   {
+//     username: "",
+//     title: "Post 2",
+//   },
+// ];
 
 //JWT GET Route
 // app.get("/posts", authenticateToken, (req, res) => {
