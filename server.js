@@ -8,7 +8,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // JWT Const
-const jwt = require("jsonwebtoken");
+// const jwt = require("jsonwebtoken");
 
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
@@ -38,23 +38,23 @@ const posts = [
 ];
 
 //JWT GET Route
-app.get("/posts", authenticateToken, (req, res) => {
-  res.json(posts.filter(post.username === req.user.name));
-});
+// app.get("/posts", authenticateToken, (req, res) => {
+//   res.json(posts.filter(post.username === req.user.name));
+// });
 
 // Token Authentication
-function authenticateToken(req, res, next) {
-  const authHeader = req.headers['authorization']
-  const token = authHeader && authHeader.split(' ')[1]
-  if (token == null) return res.sendStatus(401)
+// function authenticateToken(req, res, next) {
+//   const authHeader = req.headers['authorization']
+//   const token = authHeader && authHeader.split(' ')[1]
+//   if (token == null) return res.sendStatus(401)
 
-  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
-    console.log(err)
-    if (err) return res.sendStatus(403)
-    req.user = user
-    next()
-  })
-}
+//   jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
+//     console.log(err)
+//     if (err) return res.sendStatus(403)
+//     req.user = user
+//     next()
+//   })
+// }
 
 // sets up handlebars as apps template engine
 const hbs = exphbs.create({});
