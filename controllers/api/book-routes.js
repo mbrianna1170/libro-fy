@@ -76,7 +76,8 @@ router.post("/", (req, res) => {
     book_name: req.body.book_name,
     author_name: req.body.author_name,
     book_url: req.body.book_url,
-    category_id: req.body.category_id,
+     category_id: req.body.category_id,
+     user_id: req.body.user_id,
   })
     .then((dbBookData) => res.json(dbBookData))
     .catch((err) => {
@@ -85,20 +86,33 @@ router.post("/", (req, res) => {
     });
 });
 
-router.put('/upvote', (req, res) => {
-  // custom static method created in models/Post.js
-  Book.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
-    .then(updatedVoteData => res.json(updatedVoteData))
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
+//PUT/api/post/upvote
+// router.put('/upvote', (req, res) => {
+//   // custom static method created in models/Post.js
+//   Book.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
+//     .then(updatedVoteData => res.json(updatedVoteData))
+//     .catch(err => {
+//       console.log(err);
+//       res.status(500).json(err);
+//     });
+// });
 
+router.put('/upvote', (req, res) => { 
+  Vote.create({
+    user_id: req.body.user_id,
+    post_id: req.body.post_id
+  })
+    .then(dbPostData => res.json(dbPostData))
+    .catch(err => res.json(err));
+});
 
 router.put("/:id", (req, res) => {
   // update a book by its `id` value
-  Book.update(req.body, {
+  Book.update(
+    {
+      book_name: req.body.book_name
+    },
+    {
     where: {
       id: req.params.id,
     },

@@ -20,16 +20,19 @@ Book.init(
     book_name: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        notNull: true 
+      }
     },
     author_name: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: false
     },
     book_url: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        isURL: true,
+        isURL: true
       },
     },
     // references id from category model
@@ -37,7 +40,7 @@ Book.init(
       type: DataTypes.INTEGER,
       references: {
         model: "category",
-        key: "id",
+        key: "id"
       },
     },
     user_id: {
@@ -51,7 +54,6 @@ Book.init(
   },
   {
     sequelize,
-    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: "books",
