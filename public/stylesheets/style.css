@@ -1,3 +1,21 @@
+:root{
+    --dkblu: #08253f;
+    --ltblu: #419fd9;
+    --yello: #ebe048;
+    --light: #f5eaea;
+    --dark: #1c1f20;
+    --border-radius: 0.3rem;
+    --spacing-one: calc(1rem * 0.25);
+    --spacing-two: calc(1rem * 0.5);
+    --spacing-three: 1rem;
+    --spacing-four: calc(1rem * 1.5);
+    --spacing-five: calc(1rem * 3);
+}
+
+* {
+    box-sizing: border-box;
+}
+
 .header {
     /* Stick to the top */
     position: sticky;
