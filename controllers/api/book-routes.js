@@ -10,17 +10,17 @@ router.get("/", (req, res) => {
       "author_name",
       "book_url",
 
-      [
-        sequelize.literal(
-          "(SELECT COUNT(*) FROM vote WHERE book.id = vote.book_id)"
-        ),
-        "vote_count",
-      ],
+      // [
+      //   sequelize.literal(
+      //     "(SELECT COUNT(*) FROM vote WHERE book.id = vote.book_id)"
+      //   ),
+      //   "vote_count",
+      // ],
     ],
     include: [
       {
-        model: Category,
-        attributes: ["id", "category_name"],
+        model: User,
+        attributes: ["username"],
       },
     ],
   })
@@ -43,17 +43,17 @@ router.get("/:id", (req, res) => {
       "book_name",
       "author_name",
       "book_url",
-      [
-        sequelize.literal(
-          "(SELECT COUNT(*) FROM vote WHERE book.id = vote.book_id)"
-        ),
-        "vote_count",
-      ],
+      // [
+      //   sequelize.literal(
+      //     "(SELECT COUNT(*) FROM vote WHERE book.id = vote.book_id)"
+      //   ),
+      //   "vote_count",
+      // ],
     ],
     include: [
       {
-        model: Category,
-        attributes: ["id", "category_name"],
+        model: User,
+        attributes: ['username'],
       },
     ],
   })
