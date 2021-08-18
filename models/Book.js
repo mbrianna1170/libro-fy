@@ -33,6 +33,13 @@ Book.init(
       },
     },
     // references id from category model
+    category_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "category",
+        key: "id",
+      },
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
