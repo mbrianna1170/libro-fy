@@ -1,5 +1,5 @@
 const User = require("./User");
-// const Comment = require("./Comment");
+const Comment = require("./Comment");
 const Book = require("./Book");
 const Category = require('./Category');
 const Vote = require("./Vote");
@@ -48,12 +48,24 @@ Book.belongsTo(Category, {
   foreignKey: "book_id"
 });
 
+Comment.belongsTo(User, {
+  foreignKey: 'user_id',
+  onDelete: 'SET NULL'
+});
 
-// User.hasMany(Comment, {
-//   foreignKey: 'user_id',
-// });
+Comment.belongsTo(Book, {
+  foreignKey: 'post_id',
+  onDelete: 'SET NULL'
+});
 
-// Comment.belongsTo(User, {
-//   foreignKey
-// })
-module.exports = { User, Book, Vote, Category };
+User.hasMany(Comment, {
+  foreignKey: 'user_id',
+  onDelete: 'SET NULL'
+});
+
+Book.hasMany(Comment, {
+  foreignKey: 'post_id'
+});
+
+
+module.exports = { User, Book, Vote, Category, Comment };
