@@ -20,12 +20,19 @@
   },
   "homepage": "https://github.com/mbrianna1170/libro-fy#readme",
   "dependencies": {
+<<<<<<< HEAD
     "bcrypt": "^5.0.1",
+=======
+    "connect-session-sequelize": "^7.1.1",
+>>>>>>> main
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.3",
+    "express-session": "^1.17.2",
+    "handlebars": "^4.7.3",
     "mysql2": "^2.3.0",
     "p4ssw0rd": "^1.0.6",
+    "seeds": "^2.3.1",
     "sequelize": "^6.6.5"
   },
   "devDependencies": {}
