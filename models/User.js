@@ -1,5 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+// const hash = p4ssw0rd.hash(password, options);
+
 // create our User model
 class User extends Model {
   // set up method to run on instance data (per user) to check password
