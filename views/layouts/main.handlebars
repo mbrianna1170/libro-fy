@@ -1,33 +1,43 @@
+
+
+<!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>libro-fy</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>libro-fy</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
 
-  <body>
-    <div class="wrapper">
-      <header class="header">
-        <h1 class="header-title">
-          <a href="/">libro-fy</a>
-        </h1>
-        <h2>get lost in your next book</h2>
-        <nav>
-          <button id="logout" class="btn-no-style">logout</button>
-          <a href="/login">login</a>
-        </nav>
-      </header>
-      <main>
-        {{{body}}}
-      </main>
-      <footer>
-        Thanks for visiting!
-      </footer>
-    </div>
+<body>
+  <div class="wrapper">
+    <header>
+      
+      <nav>
+        {{#if loggedIn}}
+        <a href="/dashboard">dashboard</a>
+        <button id="logout" class="btn-no-style">logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
+      </nav>
+      <h1>
+        <a href="/">libro-fy</a>
+      </h1>
+       <h2>get lost in your next book</h2>
+    </header>
+    <main>
+      {{{ body }}}
+    </main>
+    <footer>
+      Thanks for visiting!
+    </footer>
+  </div>
+  
+  {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
+  {{/if}}
 </body>
-  </body>
 
 </html>

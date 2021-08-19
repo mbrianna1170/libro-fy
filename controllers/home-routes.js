@@ -4,9 +4,8 @@ const { Book, Category, User } = require("../models");
 
 // what users will see on homepage
 router.get("/", (req, res) => {
-   console.log(req.session);
   Book.findAll({
-    attribute: ["id", "book_name", "author_name", "book_url"],
+    attributes: ["id", "book_name", "author_name", "book_url"],
     include: [
       {
         model: Category,
@@ -21,9 +20,9 @@ router.get("/", (req, res) => {
     .then(dbBookData => {
       // pass a single book object into the homepage template
       const books = dbBookData.map(book => book.get({ plain: true }));
-      res.render("homepage", { books });
+      res.render("homepage", { books, loggedIn: req.session.loggedIn });
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
@@ -31,7 +30,16 @@ router.get("/", (req, res) => {
 
 
 // will direct to login and sign-up page
+// router.get('/login', (req, res) => {
+//   res.render('login');
+// });
+
 router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
   res.render('login');
 });
 
