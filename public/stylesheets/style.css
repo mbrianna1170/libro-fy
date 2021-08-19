@@ -1,14 +1,14 @@
 .header {
   padding: 60px;
   text-align: center;
-  background: #e7eb23;
+  background: #E7EB23;
   position: sticky;
-  color:#000000;
+  color: #000000;
   font-size: 50px;
   line-height: 30px;
   font-family: Roboto;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-} 
+}
 
 a {
   text-decoration: none;
@@ -17,31 +17,27 @@ a {
   font-weight: bold;
   transition: color 0.1s;
 }
-
 a.login-btn {
   text-decoration: none;
-  color:rgba(0, 0, 0, 0.50);
+  color: rgba(0, 0, 0, 0.5);
   font-weight: bold;
- 
   font-family: Roboto;
   font-size: 20px;
 }
-
 a:hover {
-  color: #3486eb;
+  color: #3486EB;
 }
-
-.login-form {
-	background-color: #FFFFFF;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	padding: 0 50px;
-	height: 100%;
-	text-align: center;
+.form {
+  border: 3px solid #F1F1F1;
+  background-color: #919699;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction:row;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
 }
-
 footer {
   border-top: 1px solid #ccc;
   background-color: #919699;
@@ -52,57 +48,40 @@ footer {
   font-size: 25px;
 }
 
-/* LOGIN AND SIGN UP FORM */
-
-
-.box{
-  background:white;
-  width:300px;
-  border-radius:6px;
-  margin: 0 auto 0 auto;
-  padding:0px 0px 70px 0px;
-  border: #2980b9 4px solid; 
-}
-
-.email{
-  background:#ecf0f1;
+.email {
+  background: #ECF0F1;
   border: #ccc 1px solid;
   border-bottom: #ccc 2px solid;
   padding: 8px;
-  width:250px;
-  color:#AAAAAA;
-  margin-top:10px;
-  font-size:1em;
-  border-radius:4px;
+  width: 250px;
+  color: #AAAAAA;
+  margin-top: 10px;
+  font-size: 1em;
+  border-radius: 4px;
 }
-
-.password{
-  border-radius:4px;
-  background:#ecf0f1;
+.password {
+  border-radius: 4px;
+  background: #ECF0F1;
   border: #ccc 1px solid;
   padding: 8px;
-  width:250px;
-  font-size:1em;
+  width: 250px;
+  font-size: 1em;
 }
-
-.submit{
-  background:#2ecc71;
-  width:125px;
-  padding-top:5px;
-  padding-bottom:5px;
-  color:white;
-  border-radius:4px;
-  border: #27ae60 1px solid;
-  
-  margin-top:20px;
-  margin-bottom:20px;
-  float:left;
-  margin-left:16px;
-  font-weight:800;
-  font-size:0.8em;
+.submit {
+  background: #2ECC71;
+  width: 125px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: white;
+  border-radius: 4px;
+  border: #27AE60 1px solid;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  float: left;
+  margin-left: 16px;
+  font-weight: 800;
+  font-size: 0.8em;
 }
-
-.submit:hover{
-  background:#2CC06B; 
+.submit:hover {
+  background: #2CC06B;
 }
-
