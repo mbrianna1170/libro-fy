@@ -11,32 +11,24 @@
 </head>
 
 <body>
-  <div class="wrapper">
-    <header class="header">
-      <h1 class="main-title">
-        <a href="/">libro-fy</a>
-      </h1>
-      <h2>get lost in your next book</h2>
-<<<<<<< HEAD
-      <form>
-        <button id="logout" class="btn-no-style">logout</button>
-          <a href="/login">login</a>
-      </form>
-=======
-      <nav>
+  
+    <div class="header">
+      <a href="/" class="libro-fy"><h1>libro-fy</h1></a>
+      <p>get lost in your next book</p>
+      <div class="nav-bar">
         {{#if loggedIn}}
         <a href="/dashboard">dashboard</a>
         <button id="logout" class="btn-no-style">logout</button>
         {{else}}
-        <a href="/login">login</a>
+        <a href="/login" class="login-btn">login</a>
         {{/if}}
-      </nav>
+      </div>  
+    </div>
   
->>>>>>> c4fb2bbf5b2ae2f2c6da2c1216e0674ed1038ad2
-    </header>
-  </div>
     <main>
+      <container class="main-container">
       {{{ body }}}
+      </container>
     </main>
     <footer>
       Thanks for visiting!

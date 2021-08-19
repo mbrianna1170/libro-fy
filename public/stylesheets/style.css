@@ -1,73 +1,37 @@
 .header {
-  position: sticky;
-  width: 100%;
-  height: 350px;
-  left: 0px;
-  top: 2px;
-
+  padding: 60px;
+  text-align: center;
   background: #e7eb23;
+  position: sticky;
+  color:#000000;
+  font-size: 50px;
+  line-height: 30px;
+  font-family: Roboto;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 } 
 
-h1 {
-  position: absolute;
-  width: 649px;
-  height: 195px;
-  left: 396px;
-  top: 57px;
-
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 96px;
-  line-height: 112px;
-  text-align: center;
-
-  color: #000000;
-
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-h2 {
-  position: absolute;
-  width: 625px;
-  height: 104px;
-  left: 408px;
-  top: 200px;
-
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 36px;
-  line-height: 42px;
-  text-align: center;
-
-  color: #000000;
-
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-body,
-html {
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  font-family: Roboto;
-  color: #333;
-}
-
 a {
   text-decoration: none;
+  font-family: Roboto;
   color: #000000;
   font-weight: bold;
   transition: color 0.1s;
+}
+
+a.login-btn {
+  text-decoration: none;
+  color:rgba(0, 0, 0, 0.50);
+  font-weight: bold;
+ 
+  font-family: Roboto;
+  font-size: 20px;
 }
 
 a:hover {
   color: #3486eb;
 }
 
-form {
+.login-form {
 	background-color: #FFFFFF;
 	display: flex;
 	align-items: center;
@@ -80,8 +44,65 @@ form {
 
 footer {
   border-top: 1px solid #ccc;
+  background-color: #919699;
+  font-family: Roboto;
   display: flex;
   justify-content: center;
-  padding: 1%;
-  font-size: 110%;
+  padding: 3%;
+  font-size: 25px;
 }
+
+/* LOGIN AND SIGN UP FORM */
+
+
+.box{
+  background:white;
+  width:300px;
+  border-radius:6px;
+  margin: 0 auto 0 auto;
+  padding:0px 0px 70px 0px;
+  border: #2980b9 4px solid; 
+}
+
+.email{
+  background:#ecf0f1;
+  border: #ccc 1px solid;
+  border-bottom: #ccc 2px solid;
+  padding: 8px;
+  width:250px;
+  color:#AAAAAA;
+  margin-top:10px;
+  font-size:1em;
+  border-radius:4px;
+}
+
+.password{
+  border-radius:4px;
+  background:#ecf0f1;
+  border: #ccc 1px solid;
+  padding: 8px;
+  width:250px;
+  font-size:1em;
+}
+
+.submit{
+  background:#2ecc71;
+  width:125px;
+  padding-top:5px;
+  padding-bottom:5px;
+  color:white;
+  border-radius:4px;
+  border: #27ae60 1px solid;
+  
+  margin-top:20px;
+  margin-bottom:20px;
+  float:left;
+  margin-left:16px;
+  font-weight:800;
+  font-size:0.8em;
+}
+
+.submit:hover{
+  background:#2CC06B; 
+}
+

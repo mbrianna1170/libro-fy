@@ -13,23 +13,22 @@ router.get("/", (req, res) => {
       },
       {
         model: User,
-        attributes: ['username']
-      }
+        attributes: ["username"],
+      },
     ],
   })
-    .then(dbBookData => {
+    .then((dbBookData) => {
       // pass a single book object into the homepage template
-      const books = dbBookData.map(book => book.get({ plain: true }));
+      const books = dbBookData.map((book) => book.get({ plain: true }));
       res.render("homepage", { books, loggedIn: req.session.loggedIn });
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
 // will direct to login and sign-up page
-<<<<<<< HEAD
 router.get("/login", (req, res) => {
   res.render("login");
 });
@@ -84,19 +83,19 @@ router.get("/post/:id", (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
-=======
-// router.get('/login', (req, res) => {
-//   res.render('login');
-// });
 
-router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
+  // router.get('/login', (req, res) => {
+  //   res.render('login');
+  // });
 
-  res.render('login');
->>>>>>> c4fb2bbf5b2ae2f2c6da2c1216e0674ed1038ad2
+  router.get("/login", (req, res) => {
+    if (req.session.loggedIn) {
+      res.redirect("/");
+      return;
+    }
+
+    res.render("login");
+  });
 });
 
-module.exports = router;
+module.exports= router;
