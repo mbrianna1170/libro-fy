@@ -27,6 +27,40 @@ a:hover {
   color: #3486eb;
 }
 
+.canva-image {
+  background-color: #00c2cb;
+  text-align: center;
+  padding: 15px;
+}
+.post-list {
+  text-align: center;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 11%);
+  background-color:#ccc;
+  font-size: large;
+  flex-direction: row;
+  align-content: space-between;
+  justify-content: space-between;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+li {
+  padding: 1%;
+  text-align: center;
+  list-style-type: none;
+}
+
+
+p.homepage-text {
+  font-weight: lighter;
+  font-size: medium;
+}
+
 /* LOGIN FORM BEGINS HERE */
 
 .form {
