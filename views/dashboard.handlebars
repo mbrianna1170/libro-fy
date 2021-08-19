@@ -15,3 +15,28 @@
 </section>
 
 
+{{#if books.length}}
+<section>
+  <h3>Your Books</h3>
+  <ol>
+    {{#each books as |book|}}
+    <li>
+     <article class="post">
+  <div class="title">
+    <a href="{{book_url}}" target="_blank">{{book_name}}</a>
+    <span>({{ book_url}})</span>
+  </div>
+  <div class="meta">
+    {{vote_count}} {{ vote_count}} by {{user.username}} on {{created_at}}
+    |
+    <a href="/book/{{id}}">{{comments.length}} {{ comments.length}}</a>
+  </div>
+</article>
+      <a href="/dashboard/edit/{{book.id}}" class="edit-link">Edit book</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+<script src="/javascript/add-book.js"></script>
