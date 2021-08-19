@@ -128,20 +128,21 @@ form label {
 
 header {
   padding: 20px 35px;
+  width: 100%;
   background-color: var(--yello);
+  background-size: cover;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  position: -webkit-sticky;
-  position: sticky;
+  /* position: -webkit-sticky; */
+  /* position: sticky; */
   border-bottom: 1px solid var(--lit);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  
+  /* align-items: center; */
 }
 
 header h1 {
-  font-size: 1em;
+  font-size: 50px;
 }
 
 main {
