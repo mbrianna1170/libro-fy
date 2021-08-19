@@ -1,9 +1,10 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
-const { Book, Category } = require("../models");
+const { Book, Category, User } = require("../models");
 
 // what users will see on homepage
 router.get("/", (req, res) => {
+   console.log(req.session);
   Book.findAll({
     attribute: ["id", "book_name", "author_name", "book_url"],
     include: [
@@ -11,11 +12,15 @@ router.get("/", (req, res) => {
         model: Category,
         attributes: ["id", "category_name"],
       },
+      {
+        model: User,
+        attributes: ['username']
+      }
     ],
   })
-    .then((dbBookData) => {
+    .then(dbBookData => {
       // pass a single book object into the homepage template
-      const books = dbBookData.map((book) => book.get({ plain: true }));
+      const books = dbBookData.map(book => book.get({ plain: true }));
       res.render("homepage", { books });
     })
     .catch((err) => {
