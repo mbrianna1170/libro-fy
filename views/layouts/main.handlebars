@@ -13,19 +13,18 @@
 <body>
   <div class="wrapper">
     <header class="header">
-      <h1 class="main-title">
-        <a href="/">libro-fy</a>
-      </h1>
-      <h2>get lost in your next book</h2>
+        <a href="/" class="home">home</a>
+      
       <nav>
         {{#if loggedIn}}
-        <a href="/dashboard">dashboard</a>
+        <a href="/dashboard">Your Bookshelf</a>
         <button id="logout" class="btn-no-style">logout</button>
         {{else}}
         <a href="/login">login</a>
         {{/if}}
       </nav>
-  
+  </h1 class="main-title">libro-fy</h1>
+      <h2>Get lost in your next book</h2>
     </header>
   </div>
     <main>
