@@ -6,6 +6,7 @@ const bookData = [
     author_name: "Margaret Wise Brown",
     book_url: "https://www.hoopladigital.com/title/12293865",
     category_id: "1",
+    avatar_url: "https://www.google.com/imgres?imgurl=https%3A%2F%2Ftarget.scene7.com%2Fis%2Fimage%2FTarget%2FGUEST_920d7619-524e-4d7f-a8e8-20242dd1a022%3Fwid%3D488%26hei%3D488%26fmt%3Dpjpeg&imgrefurl=https%3A%2F%2Fwww.target.com%2Fp%2Fgoodnight-moon-reissue-by-margaret-wise-brown-board-book%2F-%2FA-11340485&tbnid=8mAYUFX-4IheRM&vet=12ahUKEwiMi4vt1r3yAhXui60KHbKrC68QMygAegUIARCXAg..i&docid=go_-rPe6K0ih0M&w=488&h=488&q=goodnight%20moon&ved=2ahUKEwiMi4vt1r3yAhXui60KHbKrC68QMygAegUIARCXAg",
   },
   {
     book_name: "The Little Engine that Could",

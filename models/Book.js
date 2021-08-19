@@ -28,6 +28,14 @@ Book.init(
         type: DataTypes.STRING,
         allowNull: false
     },
+    avatar_url:{
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isURL: true
+      },
+
+    },
     book_url: {
       type: DataTypes.STRING,
       allowNull: false,
