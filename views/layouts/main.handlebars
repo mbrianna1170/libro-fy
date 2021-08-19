@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,24 +10,25 @@
 </head>
 
 <body>
-  <div class="wrapper">
-    <header class="header">
-        <a href="/" class="home">home</a>
-      
-      <nav>
+  
+    <div class="header">
+       <div class="nav-bar">
         {{#if loggedIn}}
-        <a href="/dashboard">Your Bookshelf</a>
+        <a href="/dashboard">dashboard</a>
         <button id="logout" class="btn-no-style">logout</button>
         {{else}}
-        <a href="/login">login</a>
+        <a href="/login" class="login-btn">login</a>
         {{/if}}
-      </nav>
-  </h1 class="main-title">libro-fy</h1>
-      <h2>Get lost in your next book</h2>
-    </header>
-  </div>
+      </div>   
+      <a href="/" class="libro-fy"><h1>libro-fy</h1></a>
+      <p>get lost in your next book</p>
+    
+    </div>
+  
     <main>
+      <container class="main-container">
       {{{ body }}}
+      </container>
     </main>
     <footer>
       Thanks for visiting!
