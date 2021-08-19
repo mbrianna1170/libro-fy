@@ -1,0 +1,12 @@
+<article class="post">
+  <div class="title">
+    <a href="{{book.book_url}}" target="_blank">{{book.book_name}}</a>
+    <span>Written by: {{book.author_name}}</span>
+  </div>
+  <div class="meta">
+    {{book.vote_count}} point(s) by {{book.user.username}} on
+    {{book.created_at}}
+    |
+    <a href="/post/{{book.id}}">{{book.comments.length}} comment(s)</a>
+  </div>
+</article>
