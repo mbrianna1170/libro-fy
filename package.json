@@ -4,6 +4,7 @@
   "description": "# Description: :open_book: - In a world flooded by  book options, sometimes you  need to simplify your selections. The average reader spends more time looking for a book than using that time to enjoy their read. Simplify with  Libro-fy. Libro-fy is website that allows their users to automatically get books based on recommendations, shares, likes and common interests. By simply creating an account the user will be able to save and rank  their favorite books in order to create a personal virtual bookshelf.",
   "main": "server.js",
   "scripts": {
+    "devStart": "nodemon server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "seeds": "node seeds/index.js"
@@ -20,16 +21,20 @@
   },
   "homepage": "https://github.com/mbrianna1170/libro-fy#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.3",
     "express-session": "^1.17.2",
     "handlebars": "^4.7.3",
+    "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.3.0",
     "p4ssw0rd": "^1.0.6",
     "seeds": "^2.3.1",
     "sequelize": "^6.6.5"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
 }
