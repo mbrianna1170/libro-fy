@@ -3,12 +3,14 @@ async function newFormHandler(event) {
   
     const book_name = document.querySelector('input[name="book-name"]').value;
     const book_url = document.querySelector('input[name="book-url"]').value;
-  
+    const author_name = document.querySelector('input[name="author-name"]').value;
+
     const response = await fetch(`/api/books`, {
       method: 'POST',
       body: JSON.stringify({
         book_name,
-        book_url
+        book_url,
+        author_name
       }),
       headers: {
         'Content-Type': 'application/json'
