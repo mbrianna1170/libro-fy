@@ -20,12 +20,12 @@ router.get("/", (req, res) => {
       "book_name",
       "author_name",
       "book_url",
-     [
-        sequelize.literal(
-          "(SELECT COUNT(*) FROM vote WHERE book.id = vote.book_id)"
-        ),
-        "vote_count",
-      ],
+    //  [
+    //     sequelize.literal(
+    //       "(SELECT COUNT(*) FROM vote WHERE book.id = vote.book_id)"
+    //     ),
+    //     "vote_count",
+    //   ],
     ],
     include: [
     //   {
