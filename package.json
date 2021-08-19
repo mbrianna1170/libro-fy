@@ -4,11 +4,7 @@
   "description": "# Description: :open_book: - In a world flooded by  book options, sometimes you  need to simplify your selections. The average reader spends more time looking for a book than using that time to enjoy their read. Simplify with  Libro-fy. Libro-fy is website that allows their users to automatically get books based on recommendations, shares, likes and common interests. By simply creating an account the user will be able to save and rank  their favorite books in order to create a personal virtual bookshelf.",
   "main": "server.js",
   "scripts": {
-<<<<<<< HEAD
-    "devStart": "nodemon server",
-=======
     "devStart": "nodemon server.js",
->>>>>>> c4fb2bbf5b2ae2f2c6da2c1216e0674ed1038ad2
     "test": "echo \"Error: no test specified\" && exit 1",
     "seeds": "node seeds/index.js"
   },
