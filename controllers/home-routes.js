@@ -26,11 +26,6 @@ router.get("/", (req, res) => {
 
 // will direct to login and sign-up page
 router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
-
   res.render('login');
 });
 
