@@ -4,14 +4,13 @@
     <article class="post">
       <div class="title">
         <a href="{{book.book_url}}" target="_blank">{{book.book_name}}
-        <img src="../assets/books.jpg"/></a>
         <span>Written by: {{book.author_name}}</span>
       </div>
       <div class="meta">
         {{vote_count}} point(s) by {{user.username}} on
         {{created_at}}
         |
-        <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
+        <a href="/book/{{id}}">{{comments.length}} comment(s)</a>
       </div>
     </article>
   </li>

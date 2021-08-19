@@ -46,3 +46,8 @@ To use the
 
 
 ## Contributing / Credits
+[mbrianna1170](https://github.com/mbrianna1170) 
+[mariamv29](https://github.com/mariamv29/README-generator.git)
+[Mindydiane](https://github.com/Mindydiane)
+[blainecurren](https://github.com/blainecurren)
+[mannyportillo11](https://github.com/mannyportillo11)
