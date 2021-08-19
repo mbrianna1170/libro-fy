@@ -17,19 +17,31 @@
       <h2>get lost in your next book</h2>
     </header>
       <nav>
+        {{#if loggedIn}}
+        <a href="/dashboard">dashboard</a>
         <button id="logout" class="btn-no-style">logout</button>
+        {{else}}
         <a href="/login">login</a>
+        {{/if}}
       </nav>
   
+    </header>
+  </div>
     <main>
       {{{body}}}
     </main>
     <footer>
       Thanks for visiting!
     </footer>
-   
+  </div>
+  
 
+  
+ 
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-  </body>
+</body>
 
 </html>
