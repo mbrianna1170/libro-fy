@@ -16,13 +16,12 @@ async function loginFormHandler(event) {
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('/dashboard');
     } else {
       alert(response.statusText);
     }
   }
 }
-
 
 // for SIGN UP form 
 async function signupFormHandler(event) {
@@ -43,14 +42,14 @@ async function signupFormHandler(event) {
       headers: { 'Content-Type': 'application/json' }
     });
 
+    // check the response status
     if (response.ok) {
-      document.location.replace('/');
+      console.log('success');
     } else {
       alert(response.statusText);
     }
   }
 }
-
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
 
 document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
