@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-const { Book, Category, Vote, User} = require("../../models");
+const { Book, Category, Vote, User, Comment} = require("../../models");
 
 router.get("/", (req, res) => {
   Book.findAll({
@@ -33,7 +33,6 @@ router.get("/", (req, res) => {
 
 router.get("/:id", (req, res) => {
   // find one book by its `id` value
-  // be sure to include its associated category
   Book.findOne({
     where: {
       id: req.params.id,
@@ -43,19 +42,21 @@ router.get("/:id", (req, res) => {
       "book_name",
       "author_name",
       "book_url",
-      // [
-      //   sequelize.literal(
-      //     "(SELECT COUNT(*) FROM vote WHERE book.id = vote.book_id)"
-      //   ),
-      //   "vote_count",
-      // ],
     ],
     include: [
+      // {
+      //   model: Comment,
+      //   attributes: ['id', 'comment_text', 'book_id', 'user_id', 'created_at'],
+      //   include: {
+      //     model: User,
+      //     attributes: ['username']
+      //   }
+      // },
       {
         model: User,
-        attributes: ['username'],
-      },
-    ],
+        attributes: ['username']
+      }
+    ]
   })
     .then((dbBookData) => {
       if (!dbBookData) {
@@ -75,9 +76,10 @@ router.post("/", (req, res) => {
   Book.create({
     book_name: req.body.book_name,
     author_name: req.body.author_name,
+    img_url: req.body.img_url,
     book_url: req.body.book_url,
-     category_id: req.body.category_id,
-     user_id: req.body.user_id,
+    category_id: req.body.category_id,
+    user_id: req.body.user_id,
   })
     .then((dbBookData) => res.json(dbBookData))
     .catch((err) => {
@@ -86,9 +88,9 @@ router.post("/", (req, res) => {
     });
 });
 
-//PUT/api/post/upvote
+//PUT/api/book/upvote
 // router.put('/upvote', (req, res) => {
-//   // custom static method created in models/Post.js
+//   // custom static method created in models/Book.js
 //   Book.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
 //     .then(updatedVoteData => res.json(updatedVoteData))
 //     .catch(err => {
@@ -100,9 +102,9 @@ router.post("/", (req, res) => {
 router.put('/upvote', (req, res) => { 
   Vote.create({
     user_id: req.body.user_id,
-    post_id: req.body.post_id
+    book_id: req.body.book_id
   })
-    .then(dbPostData => res.json(dbPostData))
+    .then(dbBooktData => res.json(dbBookData))
     .catch(err => res.json(err));
 });
 

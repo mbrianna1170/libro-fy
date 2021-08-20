@@ -1,33 +1,57 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>libro-fy</title>
-   <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>libro-fy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
 
 <body>
-  <div class="wrapper">
-    <header class="header">
-      <h1 class="header-title">
-        <a href="/">libro-fy</a>
-      </h1>
-      <h2>get lost in your next book</h2>
-      <nav>
+  
+    <div class="header">
+       <div class="nav-bar">
+         <a href="/">Home</a>
+        {{#if loggedIn}}
+        <a href="/dashboard">dashboard</a>
         <button id="logout" class="btn-no-style">logout</button>
-          <a href="/login">login</a>
-      </nav>
-    </header>
+        {{else}}
+        <a href="/login" class="login-btn">login</a>
+        {{/if}}
+      </div>   
+      <a href="/" class="libro-fy"><h1>libro-fy</h1></a>
+      <p>get lost in your next book</p>
+    
+    </div>
+    
     <main>
+      <container class="main-container">
       {{{ body }}}
+      </container>
     </main>
     <footer>
-    Thanks for visiting! 
+
+        <section id="contact-me">
+      <div class="contact-info">
+      <a href="https://github.com/mbrianna1170/libro-fy.git">  Contact Us </a>
+    
+    </div>
+      Thanks for visiting!
+      Copyright © 2021 libro-fy. All right reserved. 
+      
     </footer>
   </div>
+  
 
+  
+ 
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>
 
 </html>
