@@ -5,7 +5,7 @@ const { Book, Category, User, Comment } = require("../models");
 // what users will see on homepage
 router.get("/", (req, res) => {
   Book.findAll({
-    attributes: ["id", "book_name", "author_name", "book_url"],
+    attributes: ["id", "book_name", "author_name", "img_url", "book_url"],
     include: [
       {
         model: Category,
@@ -18,9 +18,12 @@ router.get("/", (req, res) => {
     ],
   })
     .then((dbBookData) => {
+      console.log(dbBookData);
       // pass a single book object into the homepage template
       const books = dbBookData.map((book) => book.get({ plain: true }));
+      console.log(books);
       res.render("homepage", { books, loggedIn: req.session.loggedIn });
+      
     })
     .catch((err) => {
       console.log(err);
@@ -44,6 +47,7 @@ router.get("/book/:id", (req, res) => {
       "book_name",
       "author_name",
       "book_url",
+      "img_url",
       "created_at",
       [
         sequelize.literal(

@@ -76,9 +76,10 @@ router.post("/", (req, res) => {
   Book.create({
     book_name: req.body.book_name,
     author_name: req.body.author_name,
+    img_url: req.body.img_url,
     book_url: req.body.book_url,
-     category_id: req.body.category_id,
-     user_id: req.body.user_id,
+    category_id: req.body.category_id,
+    user_id: req.body.user_id,
   })
     .then((dbBookData) => res.json(dbBookData))
     .catch((err) => {

@@ -20,6 +20,7 @@ router.get("/", (req, res) => {
       "book_name",
       "author_name",
       "book_url",
+      "img_url",
     //  [
     //     sequelize.literal(
     //       "(SELECT COUNT(*) FROM vote WHERE book.id = vote.book_id)"

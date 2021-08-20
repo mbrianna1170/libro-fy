@@ -27,8 +27,11 @@
     <li>
      <article class="book">
   <div class="title">
-    <a href="{{book_url}}" target="_blank">{{book_name}}</a>
- 
+    <a href="{{book.book_url}}" target="_blank">{{book.book_name}}</a>
+    <div class="book-img-container">
+      <img class="book-img"  src="{{book.img_url}}" alt="{{book.book_name}}">
+    </div>
+    <span>({{book.book_url}})</span>
   </div>
   <div class="meta">
     {{vote_count}} {{ vote_count}} by {{user.username}} {{created_at}}

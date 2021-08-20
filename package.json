@@ -28,6 +28,7 @@
     "express-session": "^1.17.2",
     "handlebars": "^4.7.3",
     "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.3",
     "mysql2": "^2.3.0",
     "p4ssw0rd": "^1.0.6",
     "seeds": "^2.3.1",
