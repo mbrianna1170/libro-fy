@@ -108,6 +108,7 @@ button {
   font-size: 0.8em;
 }
 
+/* book styling start*/
 .title {
 display: flex;
 flex-direction: column;
