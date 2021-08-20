@@ -19,7 +19,7 @@
 </section>
 
 
-{{#if books.length}}
+{{#if books.length }}
 <section>
   <h3>Your Books</h3>
   <ol>
@@ -27,8 +27,9 @@
     <li>
      <article class="post">
   <div class="title">
-    <a href="{{book_url}}" target="_blank">{{book_name}}</a>
-    <span>({{ book_url}})</span>
+    <a href="{{book.book_url}}" target="_blank">{{book.book_name}}</a>
+    <img class="book-img"  src="{{book.img_url}}" alt="{{book.book_name}}">
+    <span>({{book.book_url}})</span>
   </div>
   <div class="meta">
     {{vote_count}} {{ vote_count}} by {{user.username}} on {{created_at}}

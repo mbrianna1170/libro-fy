@@ -30,6 +30,7 @@ Book.init(
     },
     img_url:{
       type: DataTypes.STRING,
+      defaultValue: "https://d827xgdhgqbnd.cloudfront.net/wp-content/uploads/2016/04/09121712/book-cover-placeholder.png",
       allowNull: false,
       validate: {
         isURL: true
@@ -37,6 +38,7 @@ Book.init(
     },
     book_url: {
       type: DataTypes.STRING,
+      defaultValue: "https://d827xgdhgqbnd.cloudfront.net/wp-content/uploads/2016/04/09121712/book-cover-placeholder.png",
       allowNull: false,
       validate: {
         isURL: true

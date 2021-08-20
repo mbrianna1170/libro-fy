@@ -93,6 +93,24 @@ button {
   width: 10%;
 }
 
+.title {
+display: flex;
+flex-direction: column;
+}
+
+/* book image sizing*/
+.book-img {
+  max-width: 100px;
+}
+
+.book-img-container {
+  width: 100px;
+  height: 150px;
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+}
+
 .submit:hover {
 
   background: #2CC06B;

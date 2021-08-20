@@ -25,7 +25,7 @@ router.get("/:id", (req, res) => {
     include: [
       {
         model: Book,
-        attributes: ["id", "book_name", "author_name", "book_url", "category_id", "user_id"],
+        attributes: ["id", "book_name", "author_name", "book_url", "img_url", "category_id", "user_id"],
       },
       // include the Comment model here:
       {

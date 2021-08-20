@@ -3,8 +3,11 @@
   <li>
     <article class="post">
       <div class="title">
-        <a href="{{book.book_url}}" target="_blank">{{book.book_name}}
-        <img src="../assets/books.jpg"/></a>
+        <h2>{{book.book_name}}</h2>
+        <a href="{{book.book_url}}" target="_blank">
+        <div class="book-img-container">
+          <img class="book-img" src="{{book.img_url}}" alt="{{book.book_name}}" /></a>
+        </div>
         <span>Written by: {{book.author_name}}</span>
       </div>
       <div class="meta">
