@@ -31,13 +31,25 @@ a {
   transition: color 0.1s;
 }
 a.login-btn {
+  background: #00c2cb;
+  color: #e7eb23;
+  border-radius: 25px;
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.5);
-  font-weight: bold;
   font-family: Roboto;
   font-size: 20px;
+  padding: 15px, 15px;
 }
-a:hover {
+
+a.login-btn:hover
+a.dashboard-text,
+a.home-text {
+  text-decoration: underline overline;
+}
+
+a:hover,
+a.login-btn:hover,
+a.dashboard-text,
+a.home-text {
   color: #3486eb;
 }
 
@@ -85,15 +97,17 @@ footer {
 
 /* "home/dashboard/login" text on header */
 
-a.home-text,
+/* a.home-text,
 a.dashboard-text {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.7);
   font-family: Roboto;
   font-size: 20px;
-}
+} */
 
-button#logout {
+button#logout,
+a.home-text,
+a.dashboard-text {
   background: #00c2cb;
   color: #e7eb23;
   border-radius: 25px;
@@ -103,7 +117,19 @@ button#logout {
   width: auto;
 }
 
+button#logout:hover {
+  text-decoration: underline;
+  color: rgb(175, 37, 33);
+}
 
+button {
+  background-color: #04aa6d;
+  color: white;
+  padding: 15px 15px;
+  margin: 4px 0;
+  border: none;
+  cursor: pointer;
+}
 
 /* books and text centered */
 li {
@@ -147,28 +173,11 @@ input[type="password"] {
   font-size: 1em;
 }
 
-button {
-  background-color: #04aa6d;
-  color: white;
-  padding: 4px 10px;
-  margin: 4px 0;
-  border: none;
-  cursor: pointer;
-  width: 10%;
-}
 
 .submit:hover {
   background: #2cc06b;
 }
-button {
-  background-color: #04aa6d;
-  color: white;
-  padding: 4px 10px;
-  margin: 4px 0;
-  border: none;
-  cursor: pointer;
-  width: 10%;
-}
+
 .submit {
   background: #2ecc71;
   width: 125px;
@@ -312,3 +321,4 @@ article {
   background-size: 1px 50px;
   transform: scale(1.1);
 }
+
