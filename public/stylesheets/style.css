@@ -5,7 +5,12 @@
 .header {
   padding: 60px;
   text-align: center;
-  background: #e7eb23;
+  background: linear-gradient(
+    45deg,
+    #4b99f1 10%,
+    #e2e60b 59%,
+    #1b128f 75%
+  );
   position: sticky;
   color: #000000;
   font-size: 50px;
@@ -94,7 +99,7 @@ button {
   margin: 4px 0;
   border: none;
   cursor: pointer;
-  width: 10%;
+
 }
 .submit {
   background: #2ecc71;
@@ -228,13 +233,13 @@ article {
     padding: 60px 30px;
     border: 1px solid black;
     border-radius: 10px;
-    background-color: #e2e60b;
-    /* background-image: linear-gradient(
+    /* background-color: #e2e60b; */
+    background-image: linear-gradient(
       45deg,
-      #3274ee 5%,
-      #e2e60b 52%,
-      #0e75c9 90%
-    ); */
+      #e2e60b 5%,
+      #0e0ec9 52%,
+      #4b99f1 90%
+    );
   }  
 
 
