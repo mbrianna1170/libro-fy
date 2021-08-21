@@ -24,7 +24,8 @@ If your README is very long, add a table of contents to make it easy for users t
 `npm i sequelize` >
 `npm i dotenv`
 
-
+## Heroku Deployment
+https://libro-fy.herokuapp.com/
 
 ## Usage 
 
