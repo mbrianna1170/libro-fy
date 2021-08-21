@@ -94,13 +94,30 @@ input[type="password"] {
 }
 button {
   background-color: #04aa6d;
-  color: white;
-  padding: 4px 10px;
+  color: rgb(240, 240, 240);
+  padding: 15px 15px;
   margin: 4px 0;
   border: none;
   cursor: pointer;
+}
+button:hover {
+
+  text-decoration: underline;
+  color: rgb(175, 37, 33);
 
 }
+a.login-btn {
+  background-color: #04aa6d;
+  color: rgb(240, 240, 240);
+  padding: 5px 10px;
+  margin: 4px 0;
+  border: none;
+  cursor: pointer;
+}
+a.login-btn:hover {
+  text-decoration: underline overline;
+}
+
 .submit {
   background: #2ecc71;
   width: 125px;
@@ -184,6 +201,8 @@ flex-direction: column;
 }
 .btn-create:hover {
   cursor: pointer;
+  color: rgb(250, 246, 246);
+  font-weight: 700;
   transform: scale(1.3);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.396);
 }
