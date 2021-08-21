@@ -41,6 +41,7 @@ router.get("/:id", (req, res) => {
       "id",
       "book_name",
       "author_name",
+      "img_url",
       "book_url",
     ],
     include: [
