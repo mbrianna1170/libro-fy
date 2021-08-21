@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
-const { Book, Category, User } = require("../models");
+const { Book, Category, User, Comment } = require("../models");
 
 // what users will see on homepage
 router.get("/", (req, res) => {
@@ -36,8 +36,8 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-// for signle-post
-router.get("/post/:id", (req, res) => {
+// for signle-book
+router.get("/book/:id", (req, res) => {
   Book.findOne({
     where: {
       id: req.params.id,
@@ -51,7 +51,7 @@ router.get("/post/:id", (req, res) => {
       "created_at",
       [
         sequelize.literal(
-          "(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)"
+          "(SELECT COUNT(*) FROM vote WHERE book.id = vote.book_id)"
         ),
         "vote_count",
       ],
@@ -59,7 +59,7 @@ router.get("/post/:id", (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
+        attributes: ["id", "comment_text", "book_id", "user_id", "created_at"],
         include: {
           model: User,
           attributes: ["username"],
@@ -71,26 +71,23 @@ router.get("/post/:id", (req, res) => {
       },
     ],
   })
-    .then((dbPostData) => {
-      if (!dbPostData) {
+    .then((dbBookData) => {
+      if (!dbBookData) {
         res.status(404).json({ message: "No book found with this id" });
         return;
       }
 
       // serialize the data
-      const post = dbPostData.get({ plain: true });
+      const book = dbBookData.get({ plain: true });
 
       // pass data to template
-      res.render("single-post", { post });
+      res.render("single-book", { book });
     })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 
-  // router.get('/login', (req, res) => {
-  //   res.render('login');
-  // });
 
   router.get("/login", (req, res) => {
     if (req.session.loggedIn) {

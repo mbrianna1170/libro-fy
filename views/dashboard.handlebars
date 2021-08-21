@@ -1,5 +1,5 @@
-<section>
-  <h3>Enter Your Favorite Book</h3>
+<section class="dash">
+  <h3 class="dash-title">Enter your favorite book to the bookshelf</h3>
 
   <form class="new-book-form">
     <div>
@@ -11,21 +11,21 @@
       <input type="text" id="author-name" name="author-name" />
     </div>
     <div>
-      <label for="book-url">Book Link</label>
+      <label for="book-url">Where can I find this book?</label>
       <input id="book-url" name="book-url" />
     </div>
-    <button type="submit" class="btn">Create</button>
+    <button type="submit" class="btn-create">Add Book</button>
   </form>
 </section>
 
 
-{{#if books.length }}
-<section>
-  <h3>Your Books</h3>
-  <ol>
+{{#if books.length}}
+<section class="library">
+  <h3>Your Library</h3>
+  <ol class="hello">
     {{#each books as |book|}}
     <li>
-     <article class="post">
+     <article class="book">
   <div class="title">
     <a href="{{book.book_url}}" target="_blank">{{book.book_name}}</a>
     <div class="book-img-container">
@@ -34,12 +34,13 @@
     <span>({{book.book_url}})</span>
   </div>
   <div class="meta">
-    {{vote_count}} {{ vote_count}} by {{user.username}} on {{created_at}}
+    {{vote_count}} {{ vote_count}} by {{user.username}} {{created_at}}
     |
     <a href="/book/{{id}}">{{comments.length}} {{ comments.length}}</a>
+      <a href="/dashboard/edit/{{book.id}}" class="edit-link">Share book</a>
   </div>
 </article>
-      <a href="/dashboard/edit/{{book.id}}" class="edit-link">Edit book</a>
+    
     </li>
     {{/each}}
   </ol>

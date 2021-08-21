@@ -19,15 +19,14 @@ const bookData = [
     book_name: "Dragonflight",
     author_name: "Anne McCaffrey",
     book_url:
-      "https://www.amazon.com/Dragonflight-Dragonriders-Pern-Anne-McCaffrey/dp/0345335465",
+      "https://amzn.to/3j38kPa",
     category_id: "2",
     img_url: "https://img.thriftbooks.com/api/images/m/bd987a5ee47ab2ea769a319f86ec8f6509eb7dd2.jpg",
   },
   {
     book_name: "Trail of Lightning",
     author_name: "Rebecca Roanhorse",
-    book_url:
-      "https://www.amazon.com/s?k=trail+of+lightning+by+rebecca+roanhorse&i=stripbooks&crid=3FRI0RLR85Z8D&sprefix=Trail+of+Light%2Cstripbooks%2C248&ref=nb_sb_ss_ts-doa-p_1_14",
+    book_url: "https://amzn.to/2Wa68Na",
     category_id: "2",
     img_url: "https://pictures.abebooks.com/isbn/9781534413504-us.jpg",
   },

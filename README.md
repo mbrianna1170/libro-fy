@@ -31,9 +31,6 @@ If your README is very long, add a table of contents to make it easy for users t
 To use the 
 1. Open the terminal 
 2. Run `npm start`
-3. Open Insomnia 
-4. Run the different URL request for GET, POST, PUT, DELETE with the respective end points. 
-
 
 ---
 
@@ -46,3 +43,8 @@ To use the
 
 
 ## Contributing / Credits
+[mbrianna1170](https://github.com/mbrianna1170) 
+[mariamv29](https://github.com/mariamv29/README-generator.git)
+[Mindydiane](https://github.com/Mindydiane)
+[blainecurren](https://github.com/blainecurren)
+[mannyportillo11](https://github.com/mannyportillo11)
