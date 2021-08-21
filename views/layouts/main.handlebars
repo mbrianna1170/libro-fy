@@ -14,15 +14,15 @@
   
     <div class="header">
        <div class="nav-bar">
-         <a href="/">Home</a>
+         <a href="/" class="home-text">home</a>
         {{#if loggedIn}}
-        <a href="/dashboard">dashboard</a>
+        <a href="/dashboard" class="dashboard-text">dashboard</a>
         <button id="logout" class="btn-no-style">logout</button>
         {{else}}
         <a href="/login" class="login-btn">login</a>
         {{/if}}
       </div>   
-      <a href="/" class="libro-fy"><h1>libro-fy</h1></a>
+      <a href="/"><h1 class="libro-fy">libro-fy</h1></a>
       <p>get lost in your next book</p>
     
     </div>
