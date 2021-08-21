@@ -8,8 +8,6 @@ const exphbs = require("express-handlebars");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// JWT Const
-// const jwt = require("jsonwebtoken");
 
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
@@ -24,6 +22,8 @@ const sess = {
     db: sequelize,
   }),
 };
+
+app.use('/favicon.ico', express.static('images/favicon.ico'));
 
 // turn on session
 app.use(session(sess));
