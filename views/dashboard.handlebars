@@ -1,17 +1,50 @@
-<section>
-  <h2>Enter Your Favorite Book</h2>
+<section class="dash">
+  <h3 class="dash-title">Enter your favorite book to the bookshelf</h3>
 
-  <form class="new-post-form">
+  <form class="new-book-form">
     <div>
-      <label for="post-title">Book Name</label>
-      <input type="text" id="post-title" name="post-title" />
+      <label for="book-name">Book Name</label>
+      <input type="text" id="book-name" name="book-name" />
     </div>
     <div>
-      <label for="post-url">Link</label>
-      <input id="post-url" name="post-url" />
+         <label for="author-name">Author Name</label>
+      <input type="text" id="author-name" name="author-name" />
     </div>
-    <button type="submit" class="btn">Create</button>
+    <div>
+      <label for="book-url">Where can I find this book?</label>
+      <input id="book-url" name="book-url" />
+    </div>
+    <button type="submit" class="btn-create">Add Book</button>
   </form>
 </section>
 
 
+{{#if books.length}}
+<section class="library">
+  <h3>Your Library</h3>
+  <ol class="hello">
+    {{#each books as |book|}}
+    <li>
+     <article class="book">
+  <div class="title">
+    <a href="{{book.book_url}}" target="_blank">{{book.book_name}}</a>
+    <div class="book-img-container">
+      <img class="book-img"  src="{{book.img_url}}" alt="{{book.book_name}}">
+    </div>
+    <span>({{book.book_url}})</span>
+  </div>
+  <div class="meta">
+    {{vote_count}} {{ vote_count}} by {{user.username}} {{created_at}}
+    |
+    <a href="/book/{{id}}">{{comments.length}} {{ comments.length}}</a>
+      <a href="/dashboard/edit/{{book.id}}" class="edit-link">Share book</a>
+  </div>
+</article>
+    
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+<script src="/javascript/add-book.js"></script>

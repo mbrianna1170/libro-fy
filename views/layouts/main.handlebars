@@ -1,43 +1,57 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>libro-fy</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>libro-fy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
 
 <body>
   
     <div class="header">
-      <a href="/" class="libro-fy"><h1>libro-fy</h1></a>
-      <p>get lost in your next book</p>
-      <div class="nav-bar">
+       <div class="nav-bar">
+         <a href="/">Home</a>
         {{#if loggedIn}}
         <a href="/dashboard">dashboard</a>
         <button id="logout" class="btn-no-style">logout</button>
         {{else}}
         <a href="/login" class="login-btn">login</a>
         {{/if}}
-      </div>  
+      </div>   
+      <a href="/" class="libro-fy"><h1>libro-fy</h1></a>
+      <p>get lost in your next book</p>
+    
     </div>
-  
+    
     <main>
       <container class="main-container">
       {{{ body }}}
       </container>
     </main>
     <footer>
+
+        <section id="contact-me">
+      <div class="contact-info">
+      <a href="https://github.com/mbrianna1170/libro-fy.git">  Contact Us </a>
+    
+    </div>
       Thanks for visiting!
+      Copyright © 2021 libro-fy. All right reserved. 
+      
     </footer>
   </div>
   
+
+  
+ 
   {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
   {{/if}}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>
 
 </html>
