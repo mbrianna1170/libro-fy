@@ -22,6 +22,7 @@
   "homepage": "https://github.com/mbrianna1170/libro-fy#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "bulma": "^0.9.3",
     "connect-session-sequelize": "^7.1.1",
     "cool-ascii-faces": "^1.3.4",
     "dotenv": "^10.0.0",
