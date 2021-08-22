@@ -25,7 +25,7 @@ If your README is very long, add a table of contents to make it easy for users t
 `npm i dotenv`
 
 ## Heroku Deployment
-https://libro-fy.herokuapp.com/
+[Libro-Fy on Heroku](https://libro-fy.herokuapp.com/)
 
 ## Usage 
 
