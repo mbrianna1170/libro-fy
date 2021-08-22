@@ -5,7 +5,9 @@
 .header {
   padding: 60px;
   text-align: center;
-  background: linear-gradient(45deg, #4b99f1 10%, #e2e60b 59%, #1b128f 75%);
+  background-image: url("../images/dashboard.jpg");
+  background-size: cover;
+  background-position: 80%;
   position: sticky;
   color: #000000;
   font-size: 50px;
@@ -307,12 +309,8 @@ article {
   padding: 60px 30px;
   border: 1px solid black;
   border-radius: 10px;
-  background-image: linear-gradient(
-    45deg,
-    #4b99f1 5%,
-    #e2e60b 52%,
-    #0e0ec9 90%
-  );
+  background-color : #e2e60b ;
+   
 }
 
 .book:hover {
