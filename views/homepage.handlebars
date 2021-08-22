@@ -5,11 +5,12 @@
   <div class="row row-cols-auto"></div>
     <div class="col">
       <div class="card">
-      <img class="book-img" src="{{book.img_url}}" alt="{{book.book_name}}" /></a>
+        <a href="{{book.book_url}}" target="_blank">
+      <img class="book-img" src="{{book.img_url}}" alt="{{book.book_name}}" />
+      </a>
       <div class="card-body">
       <div class="title">
-        <h2>{{book.book_name}}</h2>
-        <a href="{{book.book_url}}" target="_blank">
+        <h2>{{book.book_name}}</h2>        
         </div>
         <span>Written by: {{book.author_name}}</span>
         <br>
