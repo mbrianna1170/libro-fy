@@ -14,15 +14,15 @@
   
     <div class="header">
        <div class="nav-bar">
-         <a href="/">Home</a>
+         <a href="/" class="home-text">home</a>
         {{#if loggedIn}}
-        <a href="/dashboard">dashboard</a>
+        <a href="/dashboard" class="dashboard-text">dashboard</a>
         <button id="logout" class="btn-no-style">logout</button>
         {{else}}
         <a href="/login" class="login-btn">login</a>
         {{/if}}
       </div>   
-      <a href="/" class="libro-fy"><h1>libro-fy</h1></a>
+      <a href="/"><h1 class="libro-fy">libro-fy</h1></a>
       <p>get lost in your next book</p>
     
     </div>
@@ -51,7 +51,7 @@
   {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
   {{/if}}
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  {{!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script> --}}
 </body>
 
 </html>

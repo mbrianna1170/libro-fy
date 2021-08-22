@@ -1,20 +1,21 @@
 <div class="canva-image">
        <img src="/images/Explore Titles Below.png"/></a>
 </div>
-<div class="post-list">
   {{#each books as |book|}}
-  <li>
-    <div class="card">
+  <div class="row row-cols-auto"></div>
+    <div class="col">
+      <div class="card">
+      <img class="book-img" src="{{book.img_url}}" alt="{{book.book_name}}" /></a>
+      <div class="card-body">
       <div class="title">
         <h2>{{book.book_name}}</h2>
         <a href="{{book.book_url}}" target="_blank">
-        <div class="book-img-container">
-          <img class="book-img" src="{{book.img_url}}" alt="{{book.book_name}}" /></a>
         </div>
         <span>Written by: {{book.author_name}}</span>
         <br>
         <p class="homepage-text">Description:</p>
         <p class="homepage-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis exercitationem error quaerat tempore impedit sit, eius eligendi, veniam ullam eaque debitis quis nihil iusto ex. Voluptatem nesciunt iusto eligendi quia.</p>
+      </div>
       </div>
       <div class="meta">
         {{vote_count}} point(s) by {{user.username}} on
@@ -23,6 +24,7 @@
         <a href="/book/{{id}}">{{comments.length}} comment(s)</a>
       </div>
     </div>
-  </li>
+    </div>
+  {{!-- </li> --}}
   {{/each}}
 </div>
