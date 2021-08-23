@@ -1,3 +1,5 @@
+@import 'bulma/css/bulma.css';
+
 * {
   box-sizing: border-box;
 }
@@ -20,6 +22,7 @@
   content: "";
   background-image: url("../images/dashboard.jpg");
   background-size: cover;
+  background-attachment: fixed;
   opacity: 0.5;
   top: -95px;
   left: 0;
@@ -323,4 +326,30 @@ article {
   transition: all 0.5s ease-out;
   background-size: 1px 50px;
   transform: scale(1.1);
+}
+
+@media screen and (max-width: 480px) {
+  .nav-bar
+   {
+     width:300px;
+   }
+ }
+
+ /* test */
+
+ article.tile.is-child.box {
+  width: 50%;
+}
+
+.tile.is-parent {
+  text-align: center;
+}
+
+.tile.is-ancestor.columns {
+  text-align: -webkit-center;
+}
+
+img {
+  max-width: 280px;
+  max-height: 300px;
 }
