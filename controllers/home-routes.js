@@ -32,9 +32,9 @@ router.get("/", (req, res) => {
 });
 
 // will direct to login and sign-up page
-router.get("/login", (req, res) => {
-  res.render("login");
-});
+// router.get("/login", (req, res) => {
+//   res.render("login");
+// });
 
 // for signle-book
 router.get("/book/:id", (req, res) => {
@@ -81,7 +81,7 @@ router.get("/book/:id", (req, res) => {
       const book = dbBookData.get({ plain: true });
 
       // pass data to template
-      res.render("single-book", { book });
+      res.render("single-post", { book });
     })
     .catch((err) => {
       console.log(err);
