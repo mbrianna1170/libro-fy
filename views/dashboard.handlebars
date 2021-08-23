@@ -1,6 +1,5 @@
 <section class="dash">
   <h3 class="dash-title">Enter your favorite book to the bookshelf</h3>
-
   <form class="new-book-form">
     <div>
       <label for="book-name">Book Name</label>
@@ -17,8 +16,6 @@
     <button type="submit" class="btn-create">Add Book</button>
   </form>
 </section>
-
-
 {{#if books.length}}
 <section class="library">
   <h3>Your Library</h3>
@@ -33,17 +30,15 @@
     </div>
   </div>
   <div class="meta">
-    {{vote_count}} {{ vote_count}} by {{user.username}} {{created_at}}
+    {{vote_count}} {{ vote_count}} {{user.username}}
     |
-    <a href="/book/{{id}}">{{comments.length}} {{ comments.length}}</a>
-      <a href="/dashboard/edit/{{book.id}}" class="edit-link">Share book</a>
+    <a href="/book/{{id}}">{{comments}} check this book!{{ comments}}</a>
+      <a href="/{{book.id}}" class="edit-link"></a>
   </div>
 </article>
-    
     </li>
     {{/each}}
   </ol>
 </section>
 {{/if}}
-
 <script src="/javascript/add-book.js"></script>
