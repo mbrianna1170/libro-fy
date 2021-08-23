@@ -33,10 +33,10 @@
     </div>
   </div>
   <div class="meta">
-    {{vote_count}} {{ vote_count}} by {{user.username}} {{created_at}}
+    {{vote_count}} {{ vote_count}} {{user.username}}
     |
-    <a href="/book/{{id}}">{{comments.length}} {{ comments.length}}</a>
-      <a href="/dashboard/edit/{{book.id}}" class="edit-link">Share book</a>
+    <a href="/book/{{id}}">{{comments}} check this book!{{ comments}}</a>
+      <a href="/{{book.id}}" class="edit-link"></a>
   </div>
 </article>
     
