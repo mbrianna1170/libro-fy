@@ -32,9 +32,9 @@ router.get("/", (req, res) => {
 });
 
 // will direct to login and sign-up page
-// router.get("/login", (req, res) => {
-//   res.render("login");
-// });
+router.get("/login", (req, res) => {
+  res.render("login");
+});
 
 // for signle-book
 router.get("/book/:id", (req, res) => {
