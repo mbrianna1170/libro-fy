@@ -89,18 +89,39 @@ router.post("/", (req, res) => {
     });
 });
 
+
 // PUT /api/posts/upvote
 router.put('/upvote', (req, res) => {
-  Vote.create({
-    user_id: req.body.user_id,
-    book_id: req.body.book_id
+ // create the vote
+Vote.create({
+  user_id: req.body.user_id,
+  book_id: req.body.book_id
+}).then(() => {
+  // then find the Book we just voted on
+  return Book.findOne({
+    where: {
+      id: req.body.book_id
+    },
+    attributes: [
+      "id",
+      "book_name",
+      "author_name",
+      "img_url",
+      "book_url",
+      // use raw MySQL aggregate function query to get a count of how many votes the Book has and return it under the name `vote_count`
+      // [
+      //   sequelize.literal('(SELECT COUNT(*) FROM vote WHERE book.id = vote.book_id)'),
+      //   'vote_count'
+      // ]
+    ]
   })
-    .then(dbBookData => res.json(dbBookData))
-    .catch(err => res.json(err));
-  
-
+  .then(dbBookData => res.json(dbBookData))
+  .catch(err => {
+    console.log(err);
+    res.status(400).json(err);
+  });
 });
-
+});
 
 
 router.put("/:id", (req, res) => {
