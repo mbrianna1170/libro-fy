@@ -89,25 +89,19 @@ router.post("/", (req, res) => {
     });
 });
 
-//PUT/api/book/upvote
-// router.put('/upvote', (req, res) => {
-//   // custom static method created in models/Book.js
-//   Book.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
-//     .then(updatedVoteData => res.json(updatedVoteData))
-//     .catch(err => {
-//       console.log(err);
-//       res.status(500).json(err);
-//     });
-// });
-
-router.put('/upvote', (req, res) => { 
+// PUT /api/posts/upvote
+router.put('/upvote', (req, res) => {
   Vote.create({
     user_id: req.body.user_id,
     book_id: req.body.book_id
   })
-    .then(dbBooktData => res.json(dbBookData))
+    .then(dbBookData => res.json(dbBookData))
     .catch(err => res.json(err));
+  
+
 });
+
+
 
 router.put("/:id", (req, res) => {
   // update a book by its `id` value
