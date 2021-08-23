@@ -1,11 +1,11 @@
 <article class="post">
   <div class="title">
     <a href="{{book.book_url}}" target="_blank">{{book.book_name}}</a>
+    <img class="book-img" src="{{book.img_url}}" alt="{{book.book_name}}" />
     <span>Written by: {{book.author_name}}</span>
   </div>
   <div class="meta">
     {{book.vote_count}} point(s) by you {{user.username}} 
-  
     |
     <a href="/book/{{book.id}}">{{book.comments.length}} comment(s)</a>
   </div>
