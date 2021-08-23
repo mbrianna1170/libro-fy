@@ -81,7 +81,7 @@ router.get("/book/:id", (req, res) => {
       const book = dbBookData.get({ plain: true });
 
       // pass data to template
-      res.render("single-book", { book });
+      res.render("single-post", { book });
     })
     .catch((err) => {
       console.log(err);
