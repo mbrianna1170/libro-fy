@@ -65,7 +65,7 @@ Book.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "books",
+    modelName: "book",
   }
 );
 
