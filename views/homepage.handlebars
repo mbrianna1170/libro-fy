@@ -2,13 +2,12 @@
        <img src="/images/Explore Titles Below.png"/></a>
 </div>
   {{#each books as |book|}}
-  <div class="row row-cols-auto"></div>
-    <div class="col">
-      <div class="card">
-        <a href="{{book.book_url}}" target="_blank">
-      <img class="book-img" src="{{book.img_url}}" alt="{{book.book_name}}" />
-      </a>
-      <div class="card-body">
+      <div class="tile is-ancestor columns">
+        <article class="tile is-child box">
+        <a href="{{book.book_url}}" target="_blank"></a>
+      <figure class="image is-4by3">
+      <img src="{{book.img_url}}" alt="{{book.book_name}}" />
+      </figure>
       <div class="title">
         <h2>{{book.book_name}}</h2>        
         </div>
@@ -16,16 +15,24 @@
         <br>
         <p class="homepage-text">Description:</p>
         <p class="homepage-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis exercitationem error quaerat tempore impedit sit, eius eligendi, veniam ullam eaque debitis quis nihil iusto ex. Voluptatem nesciunt iusto eligendi quia.</p>
-      </div>
-      </div>
       <div class="meta">
         {{vote_count}} point(s) by {{user.username}} on
         {{created_at}}
         |
         <a href="/book/{{id}}">{{comments.length}} comment(s)</a>
       </div>
+      </div>
     </div>
     </div>
-  {{!-- </li> --}}
   {{/each}}
 </div>
+
+{{!-- <div class="tile is-parent">
+        <article class="tile is-child box">
+          <p class="title">Middle box</p>
+          <p class="subtitle">With an image</p>
+          <figure class="image is-4by3">
+            <img src="https://bulma.io/images/placeholders/640x480.png">
+          </figure>
+        </article>
+      </div> --}}
