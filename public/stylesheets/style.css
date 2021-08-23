@@ -333,3 +333,22 @@ article {
      width:300px;
    }
  }
+
+ /* test */
+
+ article.tile.is-child.box {
+  width: 50%;
+}
+
+.tile.is-parent {
+  text-align: center;
+}
+
+.tile.is-ancestor.columns {
+  text-align: -webkit-center;
+}
+
+img {
+  max-width: 280px;
+  max-height: 300px;
+}
